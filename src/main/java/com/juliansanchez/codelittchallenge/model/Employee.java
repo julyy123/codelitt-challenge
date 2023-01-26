@@ -1,15 +1,18 @@
 package com.juliansanchez.codelittchallenge.model;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NonNull;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@DiscriminatorValue(Employee.DISCRIMINATOR_VALUE)
 @Entity
 public class Employee extends Member {
+    public static final String DISCRIMINATOR_VALUE = "EMPLOYEE";
 
     private String role;
 }

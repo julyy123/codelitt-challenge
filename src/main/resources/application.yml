@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgresqldb:5432/codelitt
+    username: codelitt
+    password: codelitt
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+  sql:
+    init:
+      mode: always
+
+api:
+  country-url: https://restcountries.com/v3.1/name/
